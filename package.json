@@ -31,7 +31,7 @@
     "url": "https://github.com/lucasilverentand/homebridge-philips-air-purifier-ac1715/issues"
   },
   "dependencies": {
-    "@homebridge/plugin-ui-utils": "^1.0.0"
+    "@homebridge/plugin-ui-utils": "^2.2.5"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
