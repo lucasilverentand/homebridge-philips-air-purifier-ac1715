@@ -1,0 +1,17 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+node_modules/
+.eslintrc.json
+.prettierrc
+.flake8
+.git/
+.claude/
+philipsairhbicon.png
+IMG_0301.*
+codex-plan.md
+package-lock.json
+test-*.cjs
+*.tgz

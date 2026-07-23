@@ -1,0 +1,53 @@
+{
+  "name": "homebridge-philips-air-purifier-complete",
+  "version": "3.3.0-ac1715.1",
+  "private": true,
+  "customUi": true,
+  "description": "Homebridge fork with verified Philips AC1715 local CoAP control",
+  "main": "index.js",
+  "keywords": [
+    "homebridge-plugin",
+    "philips",
+    "air-purifier",
+    "homekit",
+    "coap"
+  ],
+  "engines": {
+    "node": ">=24.0.0",
+    "homebridge": ">=2.0.0"
+  },
+  "author": "MaddogWarner",
+  "contributors": [
+    "MaddogWarner",
+    "OpenAI Codex",
+    "@lucasilverentand"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasilverentand/homebridge-philips-air-purifier-ac1715.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lucasilverentand/homebridge-philips-air-purifier-ac1715/issues"
+  },
+  "dependencies": {
+    "@homebridge/plugin-ui-utils": "^1.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.5.0",
+    "globals": "^17.6.0",
+    "prettier": "^3.2.5"
+  },
+  "peerDependencies": {
+    "homebridge": ">=2.0.0"
+  },
+  "scripts": {
+    "preinstall": "bash preinstall.sh",
+    "postinstall": "bash postinstall.sh",
+    "test": "python3 -m unittest discover -s tests && node --test tests/test_trailing_value_debouncer.js && bash tests/test_homebridge_install.sh",
+    "lint": "eslint .",
+    "verify:integrity": "bash scripts/verify-source-integrity.sh",
+    "format": "prettier -w ."
+  }
+}

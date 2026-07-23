@@ -1,0 +1,5 @@
+# Default owner — review required on all changes
+* @lucasilverentand
+
+# CI/CD and security configs require explicit sign-off
+.github/ @lucasilverentand
