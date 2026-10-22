@@ -133,7 +133,7 @@ v3.0.0 changes the plugin type from `accessory` to `platform`. Update your Homeb
      "accessories": [
        {
          "name": "Air Purifier",
-         "host": "192.168.1.17",
+         "host": "192.0.2.17",
          "accessory": "PhilipsAirPurifier"
        }
      ]
@@ -151,7 +151,7 @@ v3.0.0 changes the plugin type from `accessory` to `platform`. Update your Homeb
          "devices": [
            {
              "name": "Air Purifier",
-             "host": "192.168.1.17"
+             "host": "192.0.2.17"
            }
          ]
        }
@@ -183,7 +183,7 @@ the device under `"platforms"[]."devices"` instead. For temporary rollback only,
     {
       "accessory": "PhilipsAirPurifier",
       "name": "Bedroom",
-      "host": "192.168.1.100"
+      "host": "192.0.2.100"
     }
   ]
 }
@@ -200,7 +200,7 @@ the device under `"platforms"[]."devices"` instead. For temporary rollback only,
       "devices": [
         {
           "name": "Bedroom",
-          "host": "192.168.1.100"
+          "host": "192.0.2.100"
         }
       ]
     }
@@ -218,7 +218,7 @@ the device under `"platforms"[]."devices"` instead. For temporary rollback only,
     {
       "accessory": "PhilipsAirPurifier",
       "name": "Study",
-      "host": "192.168.1.102",
+      "host": "192.0.2.102",
       "protocol": "homeid-http",
       "useHttps": true,
       "clientId": "BASE64_CLIENT_ID",
@@ -239,7 +239,7 @@ the device under `"platforms"[]."devices"` instead. For temporary rollback only,
       "devices": [
         {
           "name": "Study",
-          "host": "192.168.1.102",
+          "host": "192.0.2.102",
           "protocol": "homeid-http",
           "useHttps": true,
           "clientId": "BASE64_CLIENT_ID",
@@ -310,7 +310,7 @@ Add to your Homebridge `config.json` under `"platforms"`:
       "devices": [
         {
           "name": "Living Room Air Purifier",
-          "host": "192.168.1.100"
+          "host": "192.0.2.100"
         }
       ]
     }
@@ -329,7 +329,7 @@ For AC1xxx models that use HTTP:
       "devices": [
         {
           "name": "Bedroom Air Purifier",
-          "host": "192.168.1.101",
+          "host": "192.0.2.101",
           "protocol": "http"
         }
       ]
@@ -349,7 +349,7 @@ For HomeID/Condor local HTTP devices:
       "devices": [
         {
           "name": "Study Air Purifier",
-          "host": "192.168.1.102",
+          "host": "192.0.2.102",
           "protocol": "homeid-http",
           "useHttps": true,
           "clientId": "BASE64_CLIENT_ID",
@@ -459,11 +459,11 @@ Before configuring Homebridge, you can verify the plugin can reach your device:
 source $(npm root -g)/homebridge-philips-air-purifier-complete/.venv/bin/activate
 
 # Run a sensor query
-python $(npm root -g)/homebridge-philips-air-purifier-complete/philips_air_api.py 192.168.1.100 sensors
+python $(npm root -g)/homebridge-philips-air-purifier-complete/philips_air_api.py 192.0.2.100 sensors
 
 # Probe HomeID local HTTP endpoints without changing device state
-python $(npm root -g)/homebridge-philips-air-purifier-complete/philips_air_api.py 192.168.1.100 probe-homeid
-python $(npm root -g)/homebridge-philips-air-purifier-complete/philips_air_api.py 192.168.1.100 probe-homeid --use-https
+python $(npm root -g)/homebridge-philips-air-purifier-complete/philips_air_api.py 192.0.2.100 probe-homeid
+python $(npm root -g)/homebridge-philips-air-purifier-complete/philips_air_api.py 192.0.2.100 probe-homeid --use-https
 ```
 
 You should see a JSON payload with PM2.5, filter life, temperature, and so on. CoAP can be flaky on the first connection — re-run if you get a timeout.
@@ -521,19 +521,19 @@ State cache ──► HomeKit characteristics
 The bundled Python script can be used standalone for diagnostics:
 
 ```bash
-python3.12 philips_air_api.py 192.168.1.100 sensors
-python3.12 philips_air_api.py 192.168.1.100 status
-python3.12 philips_air_api.py 192.168.1.100 power on
-python3.12 philips_air_api.py 192.168.1.100 power off
-python3.12 philips_air_api.py 192.168.1.100 mode auto
-python3.12 philips_air_api.py 192.168.1.100 mode sleep
-python3.12 philips_air_api.py 192.168.1.100 mode medium
-python3.12 philips_air_api.py 192.168.1.100 mode turbo
-python3.12 philips_air_api.py 192.168.1.100 light 0      # off
-python3.12 philips_air_api.py 192.168.1.100 light 115    # dim
-python3.12 philips_air_api.py 192.168.1.100 light 123    # bright
-python3.12 philips_air_api.py 192.168.1.100 childlock on
-python3.12 philips_air_api.py 192.168.1.100 childlock off
+python3.12 philips_air_api.py 192.0.2.100 sensors
+python3.12 philips_air_api.py 192.0.2.100 status
+python3.12 philips_air_api.py 192.0.2.100 power on
+python3.12 philips_air_api.py 192.0.2.100 power off
+python3.12 philips_air_api.py 192.0.2.100 mode auto
+python3.12 philips_air_api.py 192.0.2.100 mode sleep
+python3.12 philips_air_api.py 192.0.2.100 mode medium
+python3.12 philips_air_api.py 192.0.2.100 mode turbo
+python3.12 philips_air_api.py 192.0.2.100 light 0      # off
+python3.12 philips_air_api.py 192.0.2.100 light 115    # dim
+python3.12 philips_air_api.py 192.0.2.100 light 123    # bright
+python3.12 philips_air_api.py 192.0.2.100 childlock on
+python3.12 philips_air_api.py 192.0.2.100 childlock off
 ```
 
 ---
