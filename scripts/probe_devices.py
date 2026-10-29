@@ -4,7 +4,7 @@ probe_devices.py — Standalone script to probe Philips air purifier devices
 for local protocol compatibility.
 
 Usage:
-    python scripts/probe_devices.py 192.168.1.10 192.168.1.11 ...
+    python scripts/probe_devices.py 192.0.2.10 192.0.2.11 ...
 
 For each IP, tries:
   - TCP connect on port 5683 (CoAP)
